@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.solid.good.media.Producto;
 import com.solid.good.utilities.CalculadoraImpuestos;
-
+//Responsablidad única y Open/Close
 public class Carrito {
 	private List<Producto> productos = new ArrayList<>();
 

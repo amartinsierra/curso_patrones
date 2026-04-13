@@ -5,7 +5,7 @@ import com.solid.good.media.Videojuego;
 import com.solid.good.service.Carrito;
 import com.solid.good.utilities.CalculadoraImpuestos;
 
-public class Demo {
+public class Main {
 
 	public static void main(String[] args) {
 		var carrito=new Carrito();

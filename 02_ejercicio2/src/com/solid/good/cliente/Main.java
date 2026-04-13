@@ -1,6 +1,7 @@
 package com.solid.good.cliente;
 
 import com.solid.good.media.Cancion;
+import com.solid.good.media.Demo;
 import com.solid.good.media.Videojuego;
 import com.solid.good.service.Carrito;
 import com.solid.good.utilities.CalculadoraImpuestos;
@@ -14,7 +15,12 @@ public class Main {
 		carrito.agregarProducto(new Videojuego("v1",30,740));
 		carrito.mostrarCarrito();
 		System.out.println("Total: "+carrito.calcularTotal(new CalculadoraImpuestos(21)));
+		
 
+	}
+	
+	void reproducirDemos(Demo demo) {
+		demo.reproducirDemo();
 	}
 
 }

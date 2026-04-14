@@ -15,7 +15,6 @@ public class Main {
         envioUsuarios(new UsuarioBuilder()
                 .tipo("operador")
                 .nombre("Pepe")
-                .email("pepe@uni.com")
                 .build());
         envioUsuarios(new UsuarioBuilder()
                 .tipo("invitado")

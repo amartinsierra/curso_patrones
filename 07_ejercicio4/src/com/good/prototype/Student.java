@@ -1,6 +1,6 @@
-package com.bad;
+package com.good.prototype;
 
-public class Student {
+public class Student implements Cloneable{
 	private String name; 
 	private String course; 
 	private String schedule;
@@ -29,6 +29,18 @@ public class Student {
 		this.schedule = schedule;
 	} 
 	
+	
+	@Override
+	public Student clone()  {
+		// TODO Auto-generated method stub
+		try {
+			return (Student) super.clone();
+		} catch (CloneNotSupportedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
 	public void showInfo() { 
 		System.out.println("Estudiante: " + name); 
 		System.out.println("Curso: " + course); 

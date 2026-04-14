@@ -54,8 +54,14 @@ public class Libro implements Cloneable{
 	@Override //(de Object)
 	public Libro clone() {
 		try {
-			//llamada al método clone() heredado de Object
-			return (Libro)super.clone();
+			
+			Libro clon= (Libro)super.clone();
+			clon.setFormatos(new ArrayList<>(clon.getFormatos()
+					.stream()
+					.map(Formato::clone)
+					.toList()
+					));
+			return clon;
 		}catch(CloneNotSupportedException ex) {
 			throw new AssertionError();
 		}

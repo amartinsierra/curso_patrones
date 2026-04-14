@@ -23,7 +23,7 @@ public class Formato implements Cloneable{
 	
 	
 	@Override
-	protected Formato clone() {
+	public Formato clone() {
 		// TODO Auto-generated method stub
 		try {
 			return (Formato)super.clone();

@@ -5,16 +5,17 @@ import composite.Curso;
 import composite.CursoComponente;
 import decorador.CertificadoDecorador;
 import decorador.TutoriaDecorador;
+import flyweight.Factory;
 
 public class FormacionService {
-	public Curso crearCurso(String nombre, double precio) {
-		return new Curso(nombre, precio);
+	public Curso crearCurso(String nombre, double precio,String aula, int capacidad) {
+		return new Curso(nombre, precio,Factory.getAula(aula, capacidad));
 	}
-	public CursoComponente crearCursoTutoria(String nombre, double precio) {
-		return new TutoriaDecorador(crearCurso(nombre,precio));
+	public CursoComponente crearCursoTutoria(CursoComponente curso) {
+		return new TutoriaDecorador(curso);
 	}
-	public CursoComponente crearCursoCertificado(String nombre, double precio) {
-		return new CertificadoDecorador(crearCurso(nombre,precio));
+	public CursoComponente crearCursoCertificado(CursoComponente curso) {
+		return new CertificadoDecorador(curso);
 	}
 	public Categoria crearCategoria(String nombre, CursoComponente... componentes) {
 		Categoria categoria=new Categoria(nombre);

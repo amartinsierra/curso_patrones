@@ -1,0 +1,41 @@
+package cliente;
+
+import composite.Categoria;
+import composite.Curso;
+import composite.CursoComponente;
+import decorador.CertificadoDecorador;
+import decorador.TutoriaDecorador;
+import service.FormacionService;
+
+public class Demo {
+	public static void main(String[] args) {
+		FormacionService formacionService=new FormacionService();
+        // Creamos cursos simples
+        Curso javaBasico = formacionService.crearCurso("Java Básico", 200);
+        Curso springBoot = formacionService.crearCurso("Spring Boot Avanzado",80);
+        Curso iaIntro = formacionService.crearCurso("Introducción a la IA", 250);
+        CursoComponente cursoConExtras = new TutoriaDecorador(
+                new CertificadoDecorador(javaBasico));
+        // Creamos subcategorias categorías
+        Categoria programacion = formacionService.crearCategoria("Programación",cursoConExtras,springBoot);
+       
+
+        Categoria inteligenciaArtificial = formacionService.crearCategoria("Inteligencia Artificial",iaIntro);
+       
+        //categoria principal
+        Categoria formacion = formacionService.crearCategoria("Formación Online",programacion,inteligenciaArtificial);
+        
+        
+
+        // Mostrar estructura completa
+        System.out.println("=== Catálogo de formación ===");
+        formacion.mostrar();
+        System.out.println("Precio total formación: " + formacion.getPrecio() + "€");
+
+        // Mostrar curso decorado
+        System.out.println("\n=== Curso decorado ===");
+        cursoConExtras.mostrar();
+        System.out.println("Precio final curso decorado: " + cursoConExtras.getPrecio() + "€");
+    }
+
+}

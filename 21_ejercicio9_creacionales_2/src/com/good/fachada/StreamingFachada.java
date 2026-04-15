@@ -8,7 +8,7 @@ import com.good.flyweight.Factory;
 import com.good.flyweight.Recurso;
 
 public class StreamingFachada {
-    public ComponenteReproducible crearPeliculaPremium(String titulo, String subt, String aud, boolean premium) {
+    public ComponenteReproducible crearPelicula(String titulo, String subt, String aud, boolean premium) {
         Recurso subtitulos = Factory.getRecurso(subt);
         Recurso audio = Factory.getRecurso(aud);
         Pelicula pelicula = new Pelicula(titulo, subtitulos, audio);

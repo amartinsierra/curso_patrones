@@ -11,7 +11,7 @@ public class ComandoPagar implements Comando {
 
     @Override
     public void ejecutar() {
-    	System.out.println("✅ Pedido pagado: " + pedido.getProducto()+" con precio final: "+pedido.getPrecio());
+    	System.out.println("Pedido pagado: " + pedido.getProducto()+" con precio final: "+pedido.getPrecio());
         pedido.pagado(true);
     }
 }

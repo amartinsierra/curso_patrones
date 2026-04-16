@@ -11,7 +11,7 @@ public class ComandoEnviar implements Comando {
 
     @Override
     public void ejecutar() {
-    	System.out.println("📦 Pedido enviado: " + pedido.getProducto());
+    	System.out.println("Pedido enviado: " + pedido.getProducto());
         pedido.pagado(true);
     }
 }

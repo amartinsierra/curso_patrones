@@ -11,7 +11,7 @@ public class ComandoCancelar implements Comando {
 
     @Override
     public void ejecutar() {
-    	System.out.println("❌ Pedido cancelado: " + pedido.getProducto());
+    	System.out.println("Pedido cancelado: " + pedido.getProducto());
     	pedido.pagado(false);
     }
 }
